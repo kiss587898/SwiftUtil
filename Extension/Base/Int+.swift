@@ -8,17 +8,18 @@
 
 import UIKit
 
-extension Int {
+public extension Int {
     
-    var stringValue:String { return String(self) }
+    public var stringValue:String { return String(self) }
     
-    var CGFloatValue:CGFloat { return CGFloat(self)}
+    public var CGFloatValue:CGFloat { return CGFloat(self)}
     
         /// 非0为true
-    var boolValue:Bool { return self == 0 ? false: true}
+    public var boolValue:Bool { return self == 0 ? false: true}
     
-    func printSelf() -> Int {
+    public func printSelf() -> Int {
         print(self)
         return self
     }
+
 }

@@ -8,10 +8,10 @@
 
 import UIKit
 
-extension Double {
-    var intValue:Int { return Int(self)}
+public extension Double {
+    public var intValue:Int { return Int(self)}
     
-    var floatValue:Float { return Float(self)}
+    public var floatValue:Float { return Float(self)}
     
-    var CGFloatValue:CGFloat { return CGFloat(self)}
+    public var CGFloatValue:CGFloat { return CGFloat(self)}
 }

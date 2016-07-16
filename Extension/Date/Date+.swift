@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     
-    var defaultString:String {
+    public var defaultString:String {
         return JDateFormatter.dateToString(date: self)
     }
     
-    func toString(format:String = JDateFormatter.defaultFormatter) -> String {
+    public func toString(format:String = JDateFormatter.defaultFormatter) -> String {
         return JDateFormatter.dateToString(format: format, date: self)
     }
 }

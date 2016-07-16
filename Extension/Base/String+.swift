@@ -8,17 +8,18 @@
 
 import Foundation
 
-extension String {
+public extension String {
     /**
      打印字符串
      */
-    func printSelf() -> String {
+    @discardableResult
+    public func printSelf() -> String {
         print(self)
         return self
     }
     
     // MARK: 类型转换
-    var intValue:Int {
+    public var intValue:Int {
         if let value = Int(self) {
             return value
         } else {
@@ -26,7 +27,7 @@ extension String {
         }
     }
     
-    var hexUInt32Value:UInt32 {
+    public var hexUInt32Value:UInt32 {
         let scanner = Scanner(string: self)
         var value:UInt32 = 0
         if scanner.scanHexInt32(&value) {
@@ -36,7 +37,7 @@ extension String {
         }
     }
     
-    var hexUInt64Value:UInt64 {
+    public var hexUInt64Value:UInt64 {
         let scanner = Scanner(string: self)
         var value:UInt64 = 0
         if scanner.scanHexInt64(&value) {
@@ -46,7 +47,7 @@ extension String {
         }
     }
     
-    var doubleValue:Double {
+    public var doubleValue:Double {
         if let value = Double(self) {
             return value
         } else {
@@ -54,20 +55,20 @@ extension String {
         }
     }
     
-    var floatValue:Float {
+    public var floatValue:Float {
         return self.doubleValue.floatValue
     }
     
     // MARK: Base64加解密
     /// base64加密
-    var base64:String {
+    public var base64:String {
         let plainData = self.data(using: String.Encoding.utf8)!
-        let base64Data = plainData.base64EncodedData(.encoding64CharacterLineLength)
+        let base64Data = plainData.base64EncodedData(options: .lineLength64Characters)
         return String(data: base64Data, encoding: String.Encoding.utf8)!
     }
     /// base64解密
-    var enBase64:String {
-        let decodedData = Data(base64Encoded: self, options: .encoding64CharacterLineLength)
+    public var enBase64:String {
+        let decodedData = Data(base64Encoded: self, options: .lineLength64Characters)
         if decodedData == nil {
             return ""
         }
@@ -77,11 +78,11 @@ extension String {
     
     // MARK: 分割字符串
     /// 将“a&&b&&c”分割成数组
-    var splitArray:[String] {
+    public var splitArray:[String] {
         return self.split(separatedBy: "&&")
     }
     /// 分割字符串成数组
-    func split(separatedBy char:String) -> [String] {
+    public func split(separatedBy char:String) -> [String] {
         if self.contains(char) {
             return self.components(separatedBy: char)
         } else {
@@ -91,15 +92,15 @@ extension String {
     
     // MARK: 格式化日期
     /// 默认格式化日期(yyyy-MM-dd HH:mm:ss)，不符合格式则返回nil
-    var defaultDate:Date? {
+    public var defaultDate:Date? {
         return JDateFormatter.stringToDate(string: self)
     }
     /// 默认格式化日期(yyyy-MM-dd HH:mm:ss)，不符合格式则返回当前时间
-    var defaultDateValue:Date {
+    public var defaultDateValue:Date {
         return JDateFormatter.stringToDate(string: self) ?? Date()
     }
     /// 格式化日期，默认(yyyy-MM-dd HH:mm:ss)，可自定义，返回日期
-    func toDate(format:String = JDateFormatter.defaultFormatter) -> Date {
+    public func toDate(format:String = JDateFormatter.defaultFormatter) -> Date {
         return JDateFormatter.stringToDate(format: format, string: self) ?? Date()
     }
 }

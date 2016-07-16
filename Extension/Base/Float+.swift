@@ -8,12 +8,12 @@
 
 import UIKit
 
-extension Float {
-    var CGFloatValue:CGFloat { return CGFloat(self)}
+public extension Float {
+    public var CGFloatValue:CGFloat { return CGFloat(self)}
     
-    var stringValue:String { return String(self)}
+    public var stringValue:String { return String(self)}
     
-    func toString(decimal:Int = 0) -> String {
+    public func toString(decimal:Int = 0) -> String {
         return String(format: "%.\(decimal)f", self)
     }
 }

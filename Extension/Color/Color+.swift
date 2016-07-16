@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension UIColor {
+public extension UIColor {
     
-    class func colorFromRGBA(rgbValue: UInt32) -> UIColor {
+    public class func colorFromRGBA(rgbValue: UInt32) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue >> 16) & 0xff)/255.0,
             green: CGFloat((rgbValue >> 8) & 0xff)/255.0,
@@ -18,7 +18,7 @@ extension UIColor {
             alpha: CGFloat((rgbValue >> 24) & 0xff)/255.0)
     }
     
-    class func colorFromRGB(rgbValue: UInt32) -> UIColor {
+    public class func colorFromRGB(rgbValue: UInt32) -> UIColor {
         return UIColor(
             red: CGFloat((rgbValue >> 16) & 0xff)/255.0,
             green: CGFloat((rgbValue >> 8) & 0xff)/255.0,
@@ -26,17 +26,17 @@ extension UIColor {
             alpha: 1)
     }
     
-    class func colorFromRGBA(rgbString: String) -> UIColor {
+    public class func colorFromRGBA(rgbString: String) -> UIColor {
         let rgbValue = rgbString.hexUInt32Value
         return colorFromRGBA(rgbValue: rgbValue)
     }
     
-    class func colorFromRGB(rgbString: String) -> UIColor {
+    public class func colorFromRGB(rgbString: String) -> UIColor {
         let rgbValue = rgbString.hexUInt32Value
         return colorFromRGB(rgbValue: rgbValue)
     }
     
-    class func colorFromRGB(red:Int, green:Int, blue:Int) -> UIColor {
+    public class func colorFromRGB(red:Int, green:Int, blue:Int) -> UIColor {
         return UIColor(
             red: red.CGFloatValue/255.0,
             green: green.CGFloatValue/255.0,
@@ -44,7 +44,7 @@ extension UIColor {
             alpha: 1)
     }
     
-    class func colorFromRGB(red:Int, green:Int, blue:Int, alpha:Float) -> UIColor {
+    public class func colorFromRGB(red:Int, green:Int, blue:Int, alpha:Float) -> UIColor {
         return UIColor(
             red: red.CGFloatValue/255.0,
             green: green.CGFloatValue/255.0,

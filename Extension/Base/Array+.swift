@@ -8,8 +8,9 @@
 
 import Foundation
 
-extension Array {
-    func combinedString(separator char:String) -> String {
+public extension Array {
+    
+    public func combinedString(separator char:String) -> String {
         var string = ""
         if self.count != 0 {
             if self.count == 1 {
@@ -25,7 +26,7 @@ extension Array {
         return string
     }
     
-    var combineString:String {
+    public var combineString:String {
         return combinedString(separator: "&&")
     }
 }

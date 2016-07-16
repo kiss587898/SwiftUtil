@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UIImage {
+public extension UIImage {
     
-    var squareImage:UIImage {
+    public var squareImage:UIImage {
         var imageRef:CGImage
         var length:CGFloat
         if self.size.width <= self.size.height {
@@ -23,7 +23,7 @@ extension UIImage {
         return UIImage(cgImage: imageRef)
     }
     
-    func scaleFitTo(width: CGFloat, needScale:Bool = false) -> UIImage {
+    public func scaleFitTo(width: CGFloat, needScale:Bool = false) -> UIImage {
         var size = CGSize(width: self.size.width, height: self.size.height)
         if size.width > width {
             size.height = width*size.height/size.width
@@ -41,7 +41,7 @@ extension UIImage {
         return scaledImage!
     }
     
-    func scaleFitTo(height: CGFloat, needScale:Bool = false) -> UIImage {
+    public func scaleFitTo(height: CGFloat, needScale:Bool = false) -> UIImage {
         var size = CGSize(width: self.size.width, height: self.size.height)
         if size.height > height {
             size.width = height*size.width/size.height

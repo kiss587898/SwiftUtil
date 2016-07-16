@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct JDateFormatter {
-    static let defaultFormatter = "yyyy-MM-dd HH:mm:ss"
+public struct JDateFormatter {
+    public static let defaultFormatter = "yyyy-MM-dd HH:mm:ss"
     
-    static func dateToString(format:String = defaultFormatter, date:Date) -> String {
+    public static func dateToString(format:String = defaultFormatter, date:Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.string(from: date)
     }
     
-    static func stringToDate(format:String = defaultFormatter, string:String) -> Date? {
+    public static func stringToDate(format:String = defaultFormatter, string:String) -> Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         return formatter.date(from: string)

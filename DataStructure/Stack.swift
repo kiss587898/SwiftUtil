@@ -8,26 +8,26 @@
 
 import Foundation
 
-struct Stack<Element> {
-    var stack:[Element] = Array()
+public struct Stack<Element> {
+    public var stack:[Element] = Array()
     
-    var count:Int {
+    public var count:Int {
         return stack.count
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return stack.count == 0
     }
     
-    mutating func push(object: Element) {
+    public mutating func push(object: Element) {
         stack.append(object)
     }
     
-    func peek() -> Element? {
+    public func peek() -> Element? {
         return stack.last
     }
     
-    mutating func pop() -> Element? {
+    public mutating func pop() -> Element? {
         if !isEmpty() {
             return stack.removeLast()
         } else {

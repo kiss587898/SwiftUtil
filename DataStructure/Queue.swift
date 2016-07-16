@@ -8,22 +8,22 @@
 
 import Foundation
 
-struct Queue<Element> {
-    var queue:[Element] = Array()
+public struct Queue<Element> {
+    public var queue:[Element] = Array()
     
-    var count:Int {
+    public var count:Int {
         return queue.count
     }
     
-    func isEmpty() -> Bool {
+    public func isEmpty() -> Bool {
         return queue.count == 0
     }
     
-    mutating func enqueue(object:Element) {
+    public mutating func enqueue(object:Element) {
         queue.append(object)
     }
     
-    mutating func dequeue() -> Element? {
+    public mutating func dequeue() -> Element? {
         if !isEmpty() {
             return queue.removeFirst()
         } else {
@@ -31,7 +31,7 @@ struct Queue<Element> {
         }
     }
     
-    func seek() -> Element? {
+    public func seek() -> Element? {
         return queue.first
     }
 }
